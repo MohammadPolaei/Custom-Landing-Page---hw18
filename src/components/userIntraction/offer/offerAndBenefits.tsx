@@ -1,4 +1,6 @@
-function OfferAndBenefits() {
+import type { form } from "../userInteraction";
+
+function OfferAndBenefits(data: form) {
 	return (
 		<div className="flex flex-col gap-15 justify-center flex-3">
 			<img
@@ -10,8 +12,23 @@ function OfferAndBenefits() {
 					<li>Online Services with Fast Response !</li>
 					<li>24/7 Support</li>
 					<p className="text-[#5a6894]">
-						Best services for you as a VIP user () with your OFFER code : () .
-						just keep your contact online .
+						Best services for you as a VIP user{" "}
+						{data.username ? (
+							<span className="font-bold bg-amber-200 rounded-md px-5">
+								{data.username}
+							</span>
+						) : (
+							"???"
+						)}{" "}
+						with your OFFER code :{" "}
+						{data.offerCode ? (
+							<span className="font-bold bg-amber-200 rounded-md px-5">
+								{data.offerCode}
+							</span>
+						) : (
+							"???"
+						)}{" "}
+						. just keep your contact online .
 					</p>
 				</ul>
 			</div>
